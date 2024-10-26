@@ -557,6 +557,7 @@ MonoBehaviour:
   speedJump: 5
   speed: 10
   myRb: {fileID: 575454732}
+  torque: {x: 0, y: 0, z: 0}
 --- !u!54 &575454732
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -610,6 +611,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4771157345124823179, guid: 925622ab3a0aeb44caa562399025bd3a, type: 3}
   m_PrefabInstance: {fileID: 1889281784}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &575454735
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575454729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e3263d76f137b348b48282bc597b9af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &629273648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1176,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5295493187125209649, guid: 925622ab3a0aeb44caa562399025bd3a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 575454732}
+    - targetCorrespondingSourceObject: {fileID: 5295493187125209649, guid: 925622ab3a0aeb44caa562399025bd3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 575454735}
   m_SourcePrefab: {fileID: 100100000, guid: 925622ab3a0aeb44caa562399025bd3a, type: 3}
 --- !u!1001 &2127429107
 PrefabInstance:
