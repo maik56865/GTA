@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public Vector3 velocity;
+    private Vector3 velocity;
     public float speedJump;
     public float speed;
-    public Rigidbody myRb;
-    public Vector3 torque;
+    private Rigidbody myRb;
+    private Vector3 torque;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        myRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
