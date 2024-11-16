@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private Vector3 velocity;
     public float speedJump;
@@ -10,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody myRb;
     private Vector3 torque;
     bool isGround;
+    public Vector3 direction;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -25,15 +29,20 @@ public class PlayerMovement : MonoBehaviour
         ray.direction = transform.up * -1;
         isGround = Physics.Raycast(ray,0.5f);
         torque.y = Input.GetAxis("Mouse X") * Time.deltaTime * 100 ;
-        velocity.x = Input.GetAxis("Horizontal") * speed ;
+        velocity = direction.normalized * speed;
         velocity.y = myRb.velocity.y;
-        velocity.z = Input.GetAxis("Vertical") * speed ;
-        if (Input.GetButtonDown("Jump")&& isGround){
-            velocity.y = speedJump;
-        }
-        myRb.velocity =  transform.rotation * velocity  ;
+        myRb.velocity = velocity;
         
 
-        transform.Rotate(torque);
+
+
+    }
+     public void Jump()
+    {
+        if (isGround)
+        {
+            velocity.y = speedJump;
+            myRb.velocity = velocity;
+        }
     }
 }
