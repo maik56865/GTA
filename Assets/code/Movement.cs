@@ -7,8 +7,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Vector3 velocity;
-    public float speedJump;
-    public float speed;
+    public float speedJump=5;
+    public float speed=5;
     private Rigidbody myRb;
     private Vector3 torque;
     bool isGround;
