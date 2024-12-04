@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     Vector3 torque;
     private Vector3 input;
     private Movement myMovement;
+    public VariableJoystick joystick;
 
     void Start()
     {
@@ -19,8 +20,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         torque.y = Input.GetAxis("Mouse X");
-        input.x = Input.GetAxis("Horizontal");
-        input.z = Input.GetAxis("Vertical");
+        input.x = joystick.Horizontal;
+        input.z = joystick.Vertical; 
         myMovement.direction = transform.rotation * input;
         transform.Rotate (torque);
         if (Input.GetButtonDown("Jump"))
