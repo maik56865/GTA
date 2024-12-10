@@ -28,7 +28,6 @@ public class Movement : MonoBehaviour
         ray.origin = transform.position;
         ray.direction = transform.up * -1;
         isGround = Physics.Raycast(ray,0.5f);
-        torque.y = Input.GetAxis("Mouse X") * Time.deltaTime * 100 ;
         velocity = direction.normalized * speed;
         velocity.y = myRb.velocity.y;
         myRb.velocity = velocity;
