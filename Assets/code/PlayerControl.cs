@@ -9,8 +9,6 @@ public class PlayerControl : MonoBehaviour
     Vector3 torque;
     private Vector3 input;
     private Movement myMovement;
-    public VariableJoystick joystick;
-    public swipeZone swipeZone;
     public float speedRot;
 
     void Start()
@@ -21,9 +19,9 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        torque.y = swipeZone.CursorMovement * Time.deltaTime * speedRot ;
-        input.x = joystick.Horizontal;
-        input.z = joystick.Vertical; 
+        torque.y = UImanager.swipeZoneInput * Time.deltaTime * speedRot;
+        input.x = UImanager.joystickInputHorizontal;
+        input.z = UImanager.joystickInputVertical;
         myMovement.direction = transform.rotation * input;
         transform.Rotate (torque);
         if (Input.GetButtonDown("Jump"))
