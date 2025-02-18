@@ -40,10 +40,7 @@ public class settingsWindow : MonoBehaviour
     {
         audioMixer.SetFloat("Master", MasterVolumeSlider.value);
         PlayerPrefs.SetFloat("volumeMusic", MasterVolumeSlider.value);
-        audioMixer.SetFloat("Music", MusicSlider.value);
-        audioMixer.SetFloat("SFX", SFX.value);
-        PlayerPrefs.SetFloat("SFX", SFX.value);
-        PlayerPrefs.SetFloat("MusicSlider",music.volume);
+        
 
     }
 
@@ -52,6 +49,16 @@ public class settingsWindow : MonoBehaviour
         PlayerPrefs.SetString("TEXT", inputField.text.ToString());
 
         
+    }
+    public void volmeCHMusic()
+    {
+        audioMixer.SetFloat("Music", MusicSlider.value);
+        PlayerPrefs.SetFloat("MusicSlider", MusicSlider.value);
+    }
+    public void volmeCHSFX()
+    {
+        audioMixer.SetFloat("SFX", SFX.value);
+        PlayerPrefs.SetFloat("SFX", SFX.value);
     }
 
     }
