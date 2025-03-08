@@ -10,55 +10,60 @@ using UnityEngine.Audio;
 public class settingsWindow : MonoBehaviour
 {
     // Start is called before the first frame update
-    public AudioSource music;
     
-    public Dropdown Language;
+    
+   
     public TMP_InputField inputField;
     public string newTXT;
-    public Slider MasterVolumeSlider;
-    public Slider MusicSlider;
+    public Slider masterVolumeSlider;
+    public Slider musicSlider;
     public AudioMixer audioMixer;
-    public Slider SFX;
+    public Slider SFXSlIder;
+    public TMP_Text player;
     
 
     void Start()
     {
         
-        newTXT = PlayerPrefs.GetString("TEXT");
+        newTXT = PlayerPrefs.GetString("NamePlayer");
         inputField.text = newTXT;
-        MasterVolumeSlider.value = PlayerPrefs.GetFloat("volumeMusic");
-        SFX.value = PlayerPrefs.GetFloat("SFX");
-        MusicSlider.value = PlayerPrefs.GetFloat("MusicSlider");
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+        SFXSlIder.value = PlayerPrefs.GetFloat("SFXVolume");
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (PlayerPrefs.HasKey("TEXT"))
+        {
+            player.text = PlayerPrefs.GetString("TEXT");
+        }
     }
-    public void volmeCH()
+    public void VolmeCH()
     {
-        audioMixer.SetFloat("Master", MasterVolumeSlider.value);
-        PlayerPrefs.SetFloat("volumeMusic", MasterVolumeSlider.value);
+        audioMixer.SetFloat("MasterVolume", masterVolumeSlider.value);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolumeSlider.value);
         
 
     }
 
-    public void inputF()
+    public void InputF()
     {
-        PlayerPrefs.SetString("TEXT", inputField.text.ToString());
+        PlayerPrefs.SetString("NamePlayer", inputField.text.ToString());
 
         
     }
-    public void volmeCHMusic()
+    public void VolmeCHMusic()
     {
-        audioMixer.SetFloat("Music", MusicSlider.value);
-        PlayerPrefs.SetFloat("MusicSlider", MusicSlider.value);
+        audioMixer.SetFloat("MusicVolume", musicSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
     }
-    public void volmeCHSFX()
+    public void VolmeCHSFX()
     {
-        audioMixer.SetFloat("SFX", SFX.value);
-        PlayerPrefs.SetFloat("SFX", SFX.value);
+        audioMixer.SetFloat("SFXVolume", SFXSlIder.value);
+        PlayerPrefs.SetFloat("SFXVolume", SFXSlIder.value);
     }
 
     }
