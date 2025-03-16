@@ -814,8 +814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1004444507}
   newTXT: 
-  masterVolumeSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
+  masterVolumeSlider: {fileID: 1998672252}
+  musicSlider: {fileID: 67249365}
   audioMixer: {fileID: 24100000, guid: 1b2e9b30b98c22745984de251e8f0ef2, type: 2}
   SFXSlIder: {fileID: 1748159544}
   player: {fileID: 0}
